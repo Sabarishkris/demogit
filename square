@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class SquareRoot {
+    public static int squareRoot(int n){
+        int start =1;
+        while(start*start<n){
+            start++;
+        }
+        if(start*start==n) return start;
+
+        return Math.abs((start-1)*(start-1)-n)<Math.abs((start*start)-n) ? start-1:start;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number : ");
+        int n= sc.nextInt();
+        System.out.println( "Square Root : " +squareRoot(n));
+    }
+}
